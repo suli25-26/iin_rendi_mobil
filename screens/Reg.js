@@ -11,26 +11,6 @@ const Reg = ( {navigaton} ) => {
 
     async function save() {
         console.log('Mentés...')
-        const url = 'http://localhost:8000/api/visits'
-        try {
-          let response = await fetch(url, {
-            method: "POST",
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                eventId: 1
-            }),
-            headers: {
-                "Content-Type": "application/json"
-            }
-          })
-          let result = await response.json()
-          console.log(result.data.id)
-          AsyncStorage.setItem('rendiId', result.data.id)
-        } catch (error) {
-            console.error('Hiba! A regisztráció sikeretelen')
-            console.error(error)
-        }
 
     }
   return (
