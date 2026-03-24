@@ -2,6 +2,7 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import { useState } from 'react'
 import { CameraView, useCameraPermissions } from 'expo-camera'
+import { startArriving } from '../services/visitService'
 
 const Reader = () => {
     const [permission, requestPermission] = useCameraPermissions()
@@ -24,8 +25,8 @@ const Reader = () => {
     const handleBarcodeScanned = ({ type, data }) => {
         setScanned(true)
         alert('Üzenet: ' + data)
+        startArriving()
     }
-
 
   return (
     <View style={styles.container}>
