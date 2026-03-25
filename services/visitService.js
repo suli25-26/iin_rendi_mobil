@@ -27,7 +27,7 @@ const updateArrived = async (data) => {
 }
 
 const createVisit = async (visit) => {
-    const url = 'http://localhost:8000/api/visits'
+    const url = host
     try {
         let response = await fetch(url, {
             method: "POST",

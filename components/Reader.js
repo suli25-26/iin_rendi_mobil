@@ -22,6 +22,8 @@ const Reader = () => {
         )
     }
 
+    // Teszteléshez:
+    // startArriving()
     const handleBarcodeScanned = ({ type, data }) => {
         setScanned(true)
         alert('Üzenet: ' + data)

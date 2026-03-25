@@ -2,7 +2,7 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import Input from '../components/Input'
 import { useState } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import { createVisit } from '../services/visitService'
 
 const Reg = ( {navigaton} ) => {
     const [name, setName] = useState()
@@ -11,7 +11,11 @@ const Reg = ( {navigaton} ) => {
 
     async function save() {
         console.log('Mentés...')
-
+        const visit = {
+            name: name,
+            email: email
+        }
+        createVisit(visit)
     }
   return (
     <View style={styles.container}>
